@@ -14,7 +14,7 @@ let btnEliminar = document.getElementById("btnDelete");
 let btnGuardar = document.getElementById("btnSendChanges");
 
 // 
-let result = document.getElementById("")
+let result = document.getElementById("results")
 let urlUsers = "https://6362c2c937f2167d6f6c7564.mockapi.io/users" 
                 // para get, post
 let urlID = "https://6362c2c937f2167d6f6c7564.mockapi.io/users/:id" 
