@@ -1,4 +1,3 @@
-
 // inputs
 let inputGetId = document.getElementById("inputGetId");
 let inputPostNombre = document.getElementById("inputPostNombre");
@@ -14,7 +13,7 @@ let btnEliminar = document.getElementById("btnDelete");
 let btnGuardar = document.getElementById("btnSendChanges");
 
 // 
-let result = document.getElementById("results")
+
 let urlUsers = "https://6362c2c937f2167d6f6c7564.mockapi.io/users" 
                 // para get, post
 let urlID = "https://6362c2c937f2167d6f6c7564.mockapi.io/users/:id" 
@@ -22,7 +21,28 @@ let urlID = "https://6362c2c937f2167d6f6c7564.mockapi.io/users/:id"
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch(urlUsers)
-    .then(response => response.json())
-    .then(data => console.log(data));
+  fetch(urlUsers)
+    .then((response) => response.json())
+    .then((data) => {
+      lista = data;
+      console.log(data);
+      resultado(lista);
+    });
 });
+
+
+let lista = [];
+let result = document.getElementById("results");
+
+function resultado(lista) {
+    let listaHTML = "";
+    lista.forEach(lista => {
+
+        listaHTML += `
+        <li>ID: ${lista.id}</li>
+        <li>Nombre: ${lista.name}</li>
+        <li>Apellido: ${lista.lastname}</li>
+        `
+        result.innerHTML = listaHTML;
+    })
+};
