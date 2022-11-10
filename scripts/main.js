@@ -91,7 +91,56 @@ fetch("https://6362c2c937f2167d6f6c7564.mockapi.io/users/",{
    
   })
 })
+
+
+let modalNombre = document.getElementById("inputNombre");
+let modalApellido = document.getElementById("inputApellido");
+
+// para modificar un usuario
+btnModificar.addEventListener("click", () => {
+  let modalNombre = document.getElementById("inputPutNombre");
+  let modalApellido = document.getElementById("inputPutApellido");
+  let id = inputPutId.value;
+
+  if (id != "" || id > 0) {
+    fetch("https://6362c2c937f2167d6f6c7564.mockapi.io/users/" + id)
+      .then((response) => response.json())
+      .then((data) => {
+        lista = data;
+        modalApellido.value = lista.lastname;
+        modalNombre.value = lista.name;
+      });
+  }
+
+});
+
+btnGuardar.addEventListener("click", () => {
+  let modalNombre = document.getElementById("inputPutNombre");
+  let modalApellido = document.getElementById("inputPutApellido");
+  let id = inputPutId.value;
+  fetch('https://6362c2c937f2167d6f6c7564.mockapi.io/users/'+id, {
+    method: 'PUT',
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ 
+      name: modalNombre.value, 
+      lastname: modalApellido.value })
+})
+.then(res => res.json())
+.then(data=> {
+  lista = data;
+        lista.lastname = modalApellido.value;
+        lista.name = modalNombre.value;
+});
+})
+
+// para eliminar un usuario
+btnEliminar.addEventListener('click',()=>{
+  let id = inputDelete.value;
+    fetch("https://6362c2c937f2167d6f6c7564.mockapi.io/users/" + id, {
+      method: 'DELETE', })
+      .then(res => res.json())
+      .then((data) => {})
+    });
   
-
-
-
