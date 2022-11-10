@@ -24,7 +24,7 @@
                         <div class="border p-3 my-3 position-relative" id="get-box">
                             <h6>Buscar registro</h6>
                             <input type="number" id="inputGet1Id" class="form-control" placeholder="ID a buscar">
-                            <button id="btnGet1" class="btn btn-primary position-absolute bottom-0 mb-3" onclick="resultado()">Buscar</button>
+                            <button id="btnGet1" class="btn btn-primary position-absolute bottom-0 mb-3">Buscar</button>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -33,6 +33,7 @@
                             <input type="text" id="inputPostNombre" class="form-control my-1" placeholder="Nombre">
                             <input type="text" id="inputPostApellido" class="form-control my-1" placeholder="Apellido">
                             <button id="btnPost" class="btn btn-success position-absolute bottom-0 mb-3">
+                            <button type="submit" id="btnPost" class="btn btn-success position-absolute bottom-0 mb-3" >
                                 Agregar</button>
                         </div>
                     </div>
@@ -70,6 +71,8 @@
     <div class="alert alert-danger fade" id="alert-error" role="alert">
         Algo salió mal...
     </div>
+
+
     <div class="modal fade" tabindex="-1" id="dataModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -82,10 +85,13 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary" id="btnSendChanges">Guardar</button>
+                    <button type="button" class="btn btn-primary" id="btnSendChanges" >Guardar</button>
                 </div>
             </div>
         </div>
     </div>
+
+
     <script src="scripts/bootstrap.bundle.js"></script>
     <script src="scripts/main.js"></script>
 </body>
