@@ -91,7 +91,34 @@ fetch("https://6362c2c937f2167d6f6c7564.mockapi.io/users/",{
    
   })
 })
+
+
+//modificar modal
+  btnModificar.addEventListener("click",()=>{
+
+  let modalNombre = document.getElementById("inputPutNombre")
+  let modalApellido = document.getElementById("inputPutApellido")
+
+  let id = inputPutId.value
+  if(id!="" || id>0){
+
+    
+
+
   
+      fetch("https://6362c2c937f2167d6f6c7564.mockapi.io/users/"+id )
+      
+      .then((response) => response.json())
+      .then((data) => {
+          lista = data
+modalApellido.value=lista.lastname
+modalNombre.value=lista.name
+          
+      
+      })
+  
+  }
+  })
 
 
 
