@@ -20,10 +20,6 @@ let urlID = "https://6362c2c937f2167d6f6c7564.mockapi.io/users/:id"
 // para  get1, put, delete
 
 
-//document.addEventListener(", () => {
-
-
-
 let lista = [];
 let result = document.getElementById("results");
 let listaHTML = "";
@@ -40,7 +36,7 @@ function resultado(lista) {
   })
 };
 
-
+//búsqueda
 btnBuscar.addEventListener("click", () => {
   let id = inputGetId.value
   if (id != "" || id > 0) {
@@ -71,10 +67,7 @@ btnBuscar.addEventListener("click", () => {
   }
 })
 
-
-
-
-
+//agregar
 btnAgregar.addEventListener("click", () => {
 
   let nombre = inputPostNombre.value;
@@ -104,29 +97,7 @@ btnAgregar.addEventListener("click", () => {
 })
 
 
-
-btnModificar.addEventListener("click", () => {
-
-  let modalNombre = document.getElementById("inputPutNombre")
-  let modalApellido = document.getElementById("inputPutApellido")
-
-  let id = inputPutId.value
-  if (id != "" || id > 0) {
-
-    fetch("https://6362c2c937f2167d6f6c7564.mockapi.io/users/" + id)
-
-      .then((response) => response.json())
-      .then((data) => {
-        lista = data
-        modalApellido.value = lista.lastname
-        modalNombre.value = lista.name
-
-
-      })
-
-  }
-})
-
+//modificar
 let modalNombre = document.getElementById("inputNombre");
 let modalApellido = document.getElementById("inputApellido");
 
@@ -147,7 +118,7 @@ btnModificar.addEventListener("click", () => {
   }
 });
 
-
+//guardar
 btnGuardar.addEventListener("click", () => {
   let modalNombre = document.getElementById("inputPutNombre");
   let modalApellido = document.getElementById("inputPutApellido");
