@@ -99,6 +99,9 @@ btnAgregar.addEventListener("click", () => {
 
       })
 
+      if( id !== lista.id && id !== "") {
+        swal ( "Vaya" ,  "Parece que el ID solicitado no existe" ,  "error" )
+        }
 
 })
 
@@ -153,6 +156,10 @@ btnEliminar.addEventListener("click", () => {
         resultado(lista);
       });
   }
+
+  if( id !== lista.id && id !== "") {
+    swal ( "Vaya" ,  "Parece que el ID solicitado no existe" ,  "error" )
+    }
 
 });
 
