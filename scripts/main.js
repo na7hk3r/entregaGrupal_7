@@ -54,8 +54,6 @@ btnBuscar.addEventListener("click", () => {
        <li>Nombre: ${lista.name}</li>
        <li>Apellido: ${lista.lastname}</li>
        `
-
-
       })
 
   } else {
@@ -68,6 +66,11 @@ btnBuscar.addEventListener("click", () => {
 
       });
   }
+
+  if( id !== lista.id ) {
+    swal ( "Vaya" ,  "Parece que el ID solicitado no existe" ,  "error" )
+    }
+    
 });
 
 //agregar
