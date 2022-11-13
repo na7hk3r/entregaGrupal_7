@@ -67,7 +67,7 @@ btnBuscar.addEventListener("click", () => {
       });
   }
 
-  if( id !== lista.id ) {
+  if( id !== lista.id && id !== "") {
     swal ( "Vaya" ,  "Parece que el ID solicitado no existe" ,  "error" )
     }
     
