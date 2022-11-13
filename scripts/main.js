@@ -5,6 +5,10 @@ let inputPostApellido = document.getElementById("inputPostApellido");
 let inputPutId = document.getElementById("inputPutId");
 let inputDelete = document.getElementById("inputDelete");
 
+// inputs modal (modificar)
+let modalNombre = document.getElementById("inputPutNombre");
+let modalApellido = document.getElementById("inputPutApellido");
+
 // botones
 let btnBuscar = document.getElementById("btnGet1");
 let btnAgregar = document.getElementById("btnPost");
@@ -23,9 +27,9 @@ let urlID = "https://6362c2c937f2167d6f6c7564.mockapi.io/users/:id"
 let lista = [];
 let result = document.getElementById("results");
 let listaHTML = "";
+
 function resultado(lista) {
-  //let listaHTML = "";
-  lista.forEach(lista => {
+  lista.forEach((lista) => {
 
     listaHTML += `
         <li>ID: ${lista.id}</li>
@@ -54,8 +58,7 @@ btnBuscar.addEventListener("click", () => {
 
       })
 
-  }
-  else {
+  } else {
     fetch(urlUsers)
       .then((response) => response.json())
       .then((data) => {
@@ -65,7 +68,7 @@ btnBuscar.addEventListener("click", () => {
 
       });
   }
-})
+});
 
 //agregar
 btnAgregar.addEventListener("click", () => {
@@ -96,15 +99,8 @@ btnAgregar.addEventListener("click", () => {
 
 })
 
-
-//modificar
-let modalNombre = document.getElementById("inputNombre");
-let modalApellido = document.getElementById("inputApellido");
-
 // para modificar un usuario
 btnModificar.addEventListener("click", () => {
-  let modalNombre = document.getElementById("inputPutNombre");
-  let modalApellido = document.getElementById("inputPutApellido");
   let id = inputPutId.value;
 
   if (id != "" || id > 0) {
@@ -120,8 +116,6 @@ btnModificar.addEventListener("click", () => {
 
 //guardar
 btnGuardar.addEventListener("click", () => {
-  let modalNombre = document.getElementById("inputPutNombre");
-  let modalApellido = document.getElementById("inputPutApellido");
   let id = inputPutId.value;
   fetch("https://6362c2c937f2167d6f6c7564.mockapi.io/users/" + id, {
     method: "PUT",
@@ -147,7 +141,7 @@ btnEliminar.addEventListener("click", () => {
   if (id != "" || id > 0) {
 
     fetch("https://6362c2c937f2167d6f6c7564.mockapi.io/users/" + id, {
-      method: 'DELETE',
+      method: "DELETE",
     })
       .then(res => res.json())
       .then(data => {
