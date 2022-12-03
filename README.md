@@ -1,5 +1,7 @@
 # Entrega Grupal 7
 
+![Captura](https://user-images.githubusercontent.com/104522465/205457236-938277b6-939a-4012-b87c-56542f6a24dd.png)
+
 - 1 Boton "Buscar" debe mostrar como resultado el registro cuyo id haya sido solicitado.
 En caso de dejar vacio el campo de id, debe mostrar como resultado la lista de todos los registros.
 
@@ -30,3 +32,5 @@ Recibe un id en la url y un json con un objeto con los atributos name y lastname
 
 - Eliminar: DELETE https://SECRET.mockapi.io/users/:id
 Recibe un id en la url, elimina el registro cuyo id coincida con el recibido, y devuelve un json con el registro eliminado.
+
+## Realizado con compañeras de Jóvenes a Programar 2022 ##
